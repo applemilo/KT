@@ -22,6 +22,18 @@ due to the end condition is l==r, so the lower_bound is l.
 detail: from r+1 to len-1, all x>=target, from -1 to l, all x < target, after looping, the index is same as the last r+1,
 due to the end condition is l==r, so the lower_bound is l+1.
 
-* () -> end: l+1==r, return l+1
+* () -> end: l+1==r, return r
 detail: from r to len, all x>=target, from -1 to l, all x < target, after looping, the index is same as the last r,
-due to the end condition is l+1==r, so the lower_bound is l+1.
+due to the end condition is l+1==r, so the lower_bound is l+1 or r.
+
+二分法问题形式的归纳：
+以下四种形式可以互相转换
+
+* $\ge$ lowerbound,
+  it is basic model
+* $\gt$,
+  it equals >=(target+1) if all int, also, it could be upperbound -1
+* <=, upperbound
+  it could be the res of > -1, or basic model put equals mark to left side
+* <,
+  it could lowerbound -1, or equals <=(target-1)

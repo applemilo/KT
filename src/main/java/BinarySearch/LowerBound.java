@@ -26,7 +26,7 @@ public class LowerBound {
         r=m;
       }
     }
-    return l + 1;
+    return r;
   }
 
   // []
